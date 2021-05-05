@@ -15,6 +15,7 @@
 			<div class="col-md-4">
 			
 				<!-- Insert Payment details -->
+				
 				<h1 id="heading">Insert Payment Details</h1>
 
 				<form id="formPayment" name="formPayment">

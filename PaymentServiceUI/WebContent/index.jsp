@@ -46,9 +46,9 @@
 					Payment Date: <input type="date" id="pday" name="pday" 
 						class="form-control form-control-sm"> <br>						
 
-					 <br> <input id="btnSave" name="btnSave" type="button"
-						value="Save" class="btn btn-primary"> <input type="hidden"
-						id="hidItemIDSave" name="hidItemIDSave" value="">
+					 <br> 
+					 <input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary"> 
+					<input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
 				</form>
 				<div id="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>

@@ -20,6 +20,9 @@ $(document)
 					
 					// Form validation-------------------
 					var status = validateItemForm();
+					
+					// Form not validation-------------------
+					
 					if (status != true) {
 						$("#alertError").text(status);
 						$("#alertError").show();
@@ -28,19 +31,19 @@ $(document)
 
 					var formObj = $("#formPayment")
 					var payment = {}
-					payment["Cnumber"] = formObj.find("#Cnumber").val().trim()
+					payment["Cnumber"] = formObj.find("#CNumber").val().trim()
 					
-					payment["CHName"] = formObj.find("#CHName").val().trim()
+					payment["CHname"] = formObj.find("#CHName").val().trim()
 					
-					payment["cvc"] = formObj.find("#cvc").val().trim()
+					payment["cvc"] = formObj.find("#Cvc").val().trim()
 					
-					payment["cardtype"] = formObj.find("#cardtype").val().trim()
+					payment["cardtype"] = formObj.find("#cardType").val().trim()
 					
-					payment["exp"] = formObj.find("#exp").val().trim()
+					payment["exp"] = formObj.find("#Exp").val().trim()
 					
-					payment["amount"] = formObj.find("#amount").val().trim()
+					payment["amount"] = formObj.find("#Amount").val().trim()
 					
-					payment["pday"] = formObj.find("#pday").val().trim()
+					payment["pday"] = formObj.find("#Pday").val().trim()
 
 
 					var type = ($("#hidItemIDSave").val() == "") ? "POST"
@@ -77,19 +80,19 @@ $(document)
 					$("#hidItemIDSave").val(
 							$(this).closest("tr").find('#hidItemIDUpdate')
 									.val());
-					$("#Cnumber").val(
+					$("#CNumber").val(
 							$(this).closest("tr").find('td:eq(0)').text());
 					$("#CHName").val(
 							$(this).closest("tr").find('td:eq(1)').text());
-					$("#cvc").val(
+					$("#Cvc").val(
 							$(this).closest("tr").find('td:eq(2)').text());
 					$("#cardType").val(
 							$(this).closest("tr").find('td:eq(3)').text());
-					$("#exp").val(
+					$("#Exp").val(
 							$(this).closest("tr").find('td:eq(4)').text());
-					$("#amount").val(
+					$("#Amount").val(
 							$(this).closest("tr").find('td:eq(5)').text());
-					$("#pday").val(
+					$("#Pday").val(
 							$(this).closest("tr").find('td:eq(6)').text());
 				});
 
@@ -127,7 +130,7 @@ $(document)
 // CLIENTMODEL=========================================================================
 function validateItemForm() {
 	// Card Number
-	if ($("#Cnumber").val().trim() == "") {
+	if ($("#CNumber").val().trim() == "") {
 		return "Insert Card Number.";
 	}
 	// Card Holder Name
@@ -136,34 +139,34 @@ function validateItemForm() {
 	}
 
 	// CVC-------------------------------
-	if ($("#cvc").val().trim() == "") {
+	if ($("#Cvc").val().trim() == "") {
 		return "Insert CVC.";
 	}
 	
 	// expire month/year-------------------------------
-	if ($("#exp").val().trim() == "") {
+	if ($("#Exp").val().trim() == "") {
 		return "Insert Contact Expire Month and Year.";
 	}
 	
 	// Card Type------------------------
-	if ($("#cardtype").val().trim() == "") {
+	if ($("#cardType").val().trim() == "") {
 		return "Select a Card Type.";
 	}
 		
 	// amount
-	if ($("#amount").val().trim() == "") {
+	if ($("#Amount").val().trim() == "") {
 		return "Insert Amount.";
 	}
 	
 	// Payment Date
-	if ($("#pday").val().trim() == "") {
+	if ($("#Pday").val().trim() == "") {
 		return "Payment Date.";
 	}
 	
 	// is numerical value check
-	var Amount = $("#amount").val().trim();
-	var CardNumber = $("#Cnumber").val().trim();
-	var CVC = $("#cvc").val().trim();
+	var Amount = $("#Amount").val().trim();
+	var CardNumber = $("#CNumber").val().trim();
+	var CVC = $("#Cvc").val().trim();
 	
 	if (!$.isNumeric(Amount)) {
 		return "Amount should be numeric.";
@@ -172,7 +175,7 @@ function validateItemForm() {
 	if (!$.isNumeric(CardNumber)) {
 		return "Card Number should be numeric.";
 	}
-	if(!$.isNumeric(CVC)){
+		if(!$.isNumeric(CVC)){
 		return "CVC should be numeric.";
 	}
 
